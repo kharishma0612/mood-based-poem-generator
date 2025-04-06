@@ -96,7 +96,7 @@ def get_emotion(text):
 
 # Poem generation
 def generate_poem(mood, language):
-    client = genai.Client(api_key=GOOGLE_API_KEY)  # Replace with your actual API key
+    client = genai.Client(api_key=st.secrets["GOOGLE_API_KEY"])  # Replace with your actual API key
     prompt = f"Generate a {mood} poem in {language}."
     response = client.models.generate_content(
         model="gemini-2.0-flash", contents=prompt
